@@ -20,16 +20,18 @@ $("#MSCI_AWCI").on("click",function(){
             asset = asset + profit + saving * YENUSD;
             const value = Math.round(asset/YENUSD);
             result.push(value);
+            $("h2").html("退職資産総額 "+Math.round(value)+"万円");
         }
-    const key = "世界株式"+k+"回目";
+    const key = k+"年目";
+    const am_result = result.map(Number)
+    console.log(am_result)
     localStorage.setItem(key, result);
     sum += result[term-1]
+    myChart.data.datasets[0].data = am_result     
     }
     console.log(sum/100)
-    $("h2").html("平均資産総額 "+Math.round(sum/100)+"万円");
-    if(Math.round(sum/100) >= 2000){
-        alert("おめでとうございます！老後資産2000万円以上の形成に成功しました！")
-    }
+    myChart.update()
+    $("h5").html("100回試行平均 "+Math.round(sum/100)+"万円");
 })
 
 $("#Deposit").on("click",function(){
@@ -46,17 +48,43 @@ $("#Deposit").on("click",function(){
             asset = asset + saving ;
             const value = Math.round(asset);
             result.push(value);
+            $("h2").html("退職資産総額 "+Math.round(value)+"万円");
         }
-    const key = "預金"+k+"回目";
+    const key = k+"年目";
+    const am_result = result.map(Number)
+    console.log(am_result)
     localStorage.setItem(key, result);
     sum += result[term-1]
+    myChart.data.datasets[0].data = am_result     
     }
     console.log(sum/100)
-    $("h2").html("平均資産総額 "+Math.round(sum/100)+"万円");
-    if(Math.round(sum/100) >= 2000){
-        alert("おめでとうございます！老後資産2000万円以上の形成に成功しました！")
-    }
+    myChart.update()
+    $("h5").html("100回試行平均 "+Math.round(sum/100)+"万円");
 })
+    //     console.clear();
+//     localStorage.clear();
+//     let sum = 0;
+//     for (let k=1; k<=100; k++){
+//         let asset = 0;
+//         let profit;
+//         let saving = 12*$("#monthly_saving").val();
+//         let term = 65-$("#age").val();
+//         let result = []
+//         for (let i = 1; i <= term; i++) {
+//             asset = asset + saving ;
+//             const value = Math.round(asset);
+//             result.push(value);
+//         }
+//     const key = "預金"+k+"回目";
+//     localStorage.setItem(key, result);
+//     sum += result[term-1]
+//     }
+//     console.log(sum/100)
+//     $("h2").html("平均資産総額 "+Math.round(sum/100)+"万円");
+//     if(Math.round(sum/100) >= 2000){
+//         alert("おめでとうございます！老後資産2000万円以上の形成に成功しました！")
+//     }
+// })
 
 $("#TOPIX").on("click",function(){
     console.clear();
@@ -74,17 +102,45 @@ $("#TOPIX").on("click",function(){
             asset = asset + profit + saving;
             const value = Math.round(asset);
             result.push(value);
+            $("h2").html("退職資産総額 "+Math.round(value)+"万円");
         }
-    const key = "日本株式"+k+"回目";
+    const key = k+"年目";
+    const am_result = result.map(Number)
+    console.log(am_result)
     localStorage.setItem(key, result);
     sum += result[term-1]
+    myChart.data.datasets[0].data = am_result     
     }
     console.log(sum/100)
-    $("h2").html("平均資産総額 "+Math.round(sum/100)+"万円");
-    if(Math.round(sum/100) >= 2000){
-        alert("おめでとうございます！老後資産2000万円以上の形成に成功しました！")
-    }
+    myChart.update()
+    $("h5").html("100回試行平均 "+Math.round(sum/100)+"万円");
 })
+    //     console.clear();
+//     localStorage.clear();
+//     let sum = 0;
+//     for (let k=1; k<=100; k++){
+//         let asset = 0;
+//         let profit;
+//         let saving = 12*$("#monthly_saving").val();
+//         let term = 65-$("#age").val();
+//         let result = []
+//         for (let i = 1; i <= term; i++) { 
+//             rate = xRandomNormal(0.0404,0.2161);
+//             profit = asset * rate;
+//             asset = asset + profit + saving;
+//             const value = Math.round(asset);
+//             result.push(value);
+//         }
+//     const key = "日本株式"+k+"回目";
+//     localStorage.setItem(key, result);
+//     sum += result[term-1]
+//     }
+//     console.log(sum/100)
+//     $("h2").html("平均資産総額 "+Math.round(sum/100)+"万円");
+//     if(Math.round(sum/100) >= 2000){
+//         alert("おめでとうございます！老後資産2000万円以上の形成に成功しました！")
+//     }
+// })
 
 $("#MSCI_EM").on("click",function(){
     console.clear();
@@ -103,17 +159,46 @@ $("#MSCI_EM").on("click",function(){
             asset = asset + profit + saving * YENUSD;
             const value = Math.round(asset/YENUSD);
             result.push(value);
+            $("h2").html("退職資産総額 "+Math.round(value)+"万円");
         }
-    const key = "新興国株式"+k+"回目";
+    const key = k+"年目";
+    const am_result = result.map(Number)
+    console.log(am_result)
     localStorage.setItem(key, result);
     sum += result[term-1]
+    myChart.data.datasets[0].data = am_result     
     }
     console.log(sum/100)
-    $("h2").html("平均資産総額 "+Math.round(sum/100)+"万円");
-    if(Math.round(sum/100) >= 2000){
-        alert("おめでとうございます！老後資産2000万円以上の形成に成功しました！")
-    }    
+    myChart.update()
+    $("h5").html("100回試行平均 "+Math.round(sum/100)+"万円");
 })
+//     console.clear();
+//     localStorage.clear();
+//     let sum = 0;
+//     for (let k=1; k<=100; k++){
+//         let asset = 0;
+//         let profit;
+//         let saving = 12*$("#monthly_saving").val();
+//         let term = 65-$("#age").val();
+//         let result = []
+//         for (let i = 1; i <= term; i++) {
+//             YENUSD = xRandomNormal(95.43,14.09); 
+//             rate = xRandomNormal(0.1365,0.2872);
+//             profit = asset * rate;
+//             asset = asset + profit + saving * YENUSD;
+//             const value = Math.round(asset/YENUSD);
+//             result.push(value);
+//         }
+//     const key = "新興国株式"+k+"回目";
+//     localStorage.setItem(key, result);
+//     sum += result[term-1]
+//     }
+//     console.log(sum/100)
+//     $("h2").html("平均資産総額 "+Math.round(sum/100)+"万円");
+//     if(Math.round(sum/100) >= 2000){
+//         alert("おめでとうございます！老後資産2000万円以上の形成に成功しました！")
+//     }    
+// })
     
 $("#MSCI_Developed").on("click",function(){
     console.clear();
@@ -132,17 +217,46 @@ $("#MSCI_Developed").on("click",function(){
             asset = asset + profit + saving * YENUSD;
             const value = Math.round(asset/YENUSD);
             result.push(value);
+            $("h2").html("退職資産総額 "+Math.round(value)+"万円");
         }
-    const key = "先進国株式"+k+"回目";
+    const key = k+"年目";
+    const am_result = result.map(Number)
+    console.log(am_result)
     localStorage.setItem(key, result);
     sum += result[term-1]
+    myChart.data.datasets[0].data = am_result     
     }
     console.log(sum/100)
-    $("h2").html("平均資産総額 "+Math.round(sum/100)+"万円");
-    if(Math.round(sum/100) >= 2000){
-        alert("おめでとうございます！老後資産2000万円以上の形成に成功しました！")
-    }
+    myChart.update()
+    $("h5").html("100回試行平均 "+Math.round(sum/100)+"万円");
 })
+    //     console.clear();
+//     localStorage.clear();
+//     let sum = 0;
+//     for (let k=1; k<=100; k++){
+//         let asset = 0;
+//         let profit;
+//         let saving = 12*$("#monthly_saving").val();
+//         let term = 65-$("#age").val();
+//         let result = []
+//         for (let i = 1; i <= term; i++) {
+//             YENUSD = xRandomNormal(95.43,14.09); 
+//             rate = xRandomNormal(0.0580,0.1792);
+//             profit = asset * rate;
+//             asset = asset + profit + saving * YENUSD;
+//             const value = Math.round(asset/YENUSD);
+//             result.push(value);
+//         }
+//     const key = "先進国株式"+k+"回目";
+//     localStorage.setItem(key, result);
+//     sum += result[term-1]
+//     }
+//     console.log(sum/100)
+//     $("h2").html("平均資産総額 "+Math.round(sum/100)+"万円");
+//     if(Math.round(sum/100) >= 2000){
+//         alert("おめでとうございます！老後資産2000万円以上の形成に成功しました！")
+//     }
+// })
 
 $("#USBOND").on("click",function(){
     console.clear();
@@ -161,17 +275,46 @@ $("#USBOND").on("click",function(){
             asset = asset + profit + saving * YENUSD;
             const value = Math.round(asset/YENUSD);
             result.push(value);
+            $("h2").html("退職資産総額 "+Math.round(value)+"万円");
         }
-    const key = "米国中長期債"+k+"回目";
+    const key = k+"年目";
+    const am_result = result.map(Number)
+    console.log(am_result)
     localStorage.setItem(key, result);
     sum += result[term-1]
+    myChart.data.datasets[0].data = am_result     
     }
     console.log(sum/100)
-    $("h2").html("平均資産総額 "+Math.round(sum/100)+"万円");
-    if(Math.round(sum/100) >= 2000){
-        alert("おめでとうございます！老後資産2000万円以上の形成に成功しました！")
-    }
+    myChart.update()
+    $("h5").html("100回試行平均 "+Math.round(sum/100)+"万円");
 })
+    //     console.clear();
+//     localStorage.clear();
+//     let sum = 0;
+//     for (let k=1; k<=100; k++){
+//         let asset = 0;
+//         let profit;
+//         let saving = 12*$("#monthly_saving").val();
+//         let term = 65-$("#age").val();
+//         let result = []
+//         for (let i = 1; i <= term; i++) {
+//             YENUSD = xRandomNormal(95.43,14.09); 
+//             rate = xRandomNormal(0.0204,0.060);
+//             profit = asset * rate;
+//             asset = asset + profit + saving * YENUSD;
+//             const value = Math.round(asset/YENUSD);
+//             result.push(value);
+//         }
+//     const key = "米国中長期債"+k+"回目";
+//     localStorage.setItem(key, result);
+//     sum += result[term-1]
+//     }
+//     console.log(sum/100)
+//     $("h2").html("平均資産総額 "+Math.round(sum/100)+"万円");
+//     if(Math.round(sum/100) >= 2000){
+//         alert("おめでとうございます！老後資産2000万円以上の形成に成功しました！");
+//     }
+// })
 
 // button tag
 // $("#aa").on("click",function(){

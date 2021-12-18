@@ -2,7 +2,13 @@ html{
     font-size: 100%;
 }
 
-
+.chart_style{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    height: 100vh;
+    margin: 60px;
+}
 
 body{
     color: #222222;
@@ -35,6 +41,14 @@ img{
 .jpn-title{
     font-size: 18px;
     text-align: center;
+    margin: 30px 0 30px 0;
+    line-height: 2;
+}
+
+.jpn-title2{
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
     margin: 30px 0 30px 0;
     line-height: 2;
 }
