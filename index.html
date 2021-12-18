@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>js01_kadai_nakamura</title>
+    <title>js02_kadai_nakamura</title>
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
     <!-- ここにはhtmlを記述 -->
@@ -21,10 +22,19 @@
     
     <section id="about" class="about__section">
       <DIV class="about__wrapper">
-        <h2 class="eng-title-b">30年後の資産総額は...</h2>
-        <h3 class="jpn-title about__subtitle">今から老後の資産形成のために毎月3万円を30年間継続的に積み立てます
-         <br>積み立てる資金の30年間一貫した運用手段を以下の選択肢から選んでください
+        <h2 class="eng-title-b">あなたの資産総額は...</h2>
+        <h3 class="jpn-title about__subtitle">現在の年齢から65歳まで毎月積立で資産形成をしていきます
+         <br>積み立てる資金の一貫した運用手段を以下の選択肢から選んでください
+         <br>資産運用結果は100回試行した結果の平均値の資産総額で算出されるます
           <br>金融庁が老後資金として足りなくなると報告した2000万円を超えた資産形成はできるでしょうか...</h3>
+        <div class="form__wrapper">
+          <dl class="form__inner">
+            <dt class="form__title">現在の年齢</dt>
+            <dd class="form__item"><input type="text" id="age"></dd>
+            <dt class="form__title">毎月積立額 (万円) </dt>
+            <dd class="form__item"><input type="text" id="monthly_saving" placeholder="平均3万円程度"></dd>
+          </dl>
+        </div>
         <div class="button_style">
           <button id="Deposit" class="button_item">日本円預金</button>
           <button id="TOPIX" class="button_item">日本株式インデックス</button>
@@ -33,12 +43,47 @@
           <button id="MSCI_Developed" class="button_item">先進国株式インデックス</button>
           <button id="MSCI_EM" class="button_item">新興国株式インデックス</button>
         </div>
+
+
+        <!-- <div>
+          <canvas id="myChart"></canvas>
+        </div>        
+
+        <script>
+          // === include 'setup' then 'config' above ===
+        const data = {
+          labels: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,25,27,28,29,30,31],
+          datasets: [{
+              label: 'My First dataset',
+              backgroundColor: 'rgb(255, 99, 132)',
+              borderColor: 'rgb(255, 99, 132)',
+              data: localStorage.getItem("世界株式100回目"),
+          }]
+          };
+        const config = {
+          type: 'line',
+          data: data,
+          options: {
+            y:{min:10,
+            max:3000,
+          }
+          }
+          };
+        const myChart = new Chart(
+          document.getElementById('myChart'),
+          config
+          );
+        </script> -->
+        
+        
+        
+        <!-- <table id="list"></table> -->
         <p class="about__1 text-center">シミュレーションの前提</p>
         <p class="about__2 text-center">本シミュレーションは株式・債券・為替の過去20年分の年次データを活用して確率変数を発生させて資産形成モデルを作っています
-        <br>そのため、同じ選択肢を取ってもクリックする度に結果は大きく異なります（リスク性資産で運用する場合）
-        <br>HtmlのConsoleを確認すると毎年の積立・運用結果が30年後までの時系列で確認できます</p>
+        <br>そのため、同じ選択肢を取ってもクリックする度に結果は異なりますが、100回平均になっています（リスク性資産で運用する場合）
+        <br>HtmlのLocal Storageを確認すると毎年の積立・運用結果が65歳までの時系列で確認できます</p>
         <p class="about__2 text-center">株式・債券で運用する場合、毎年過去データの平均・標準偏差に基づいた正規分布の値動きでリターンが生まれます
-          <br>更に、海外資産で運用する場合はドル建てになるので、積立時と30年後の資産形成完了時の為替変動リスクが生じることになります
+          <br>更に、海外資産で運用する場合はドル建てになるので、積立時と資産形成完了時の為替変動リスクが生じることになります
         </p>
         <p class="about__3 text-center">（実際の資産運用では、各種資産への分散投資や資産形成後期でのリスク軽減が図られるので、今回の単純なシミュレーションよりリスクは低くなります）</p>
       </DIV>
@@ -145,11 +190,11 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
     <script src="http://www.kogures.com/hitoshi/javascript/mathlib.js"></script>
+    
     <!-- このコメントの行より下にjsフォルダのtest.jsを読み込みましょう🤗 1.授業でやります!-->
     <!-- 授業でやる箇所 ↓-->
     <!-- aaaaa -->
-    <script src="js/test.js"></script>
-
+    <script src="js/test.js"></script>   
     <!-- 授業でやる箇所 ↑-->
   </body>
 </html>

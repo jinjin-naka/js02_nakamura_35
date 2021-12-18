@@ -135,6 +135,37 @@ img{
     width: 100% ;
 }
 
+.input_style{
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100% ;
+}
+
+.form__wrapper{
+    margin: 0 0 60px 0;
+}
+
+.form__inner{
+    width: 640px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+.form__title{
+    width: 159px;
+    padding: 8px 64px 8px 16px;
+    line-height: 1.5;
+}
+
+.form__item{
+    width: 328px;
+    padding: 8px 8px 8px 8px;
+}
+
 .button_item{
     margin: auto;
 }
