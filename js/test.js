@@ -24,7 +24,7 @@ $("#MSCI_AWCI").on("click",function(){
             relabel.push(i);
             $("h2").html("退職資産総額 "+Math.round(value)+"万円");
         }
-    const key = k+"年目";
+    const key = k+"回目";
     const am_result = result.map(Number)
     console.log(am_result)
     localStorage.setItem(key, result);
@@ -54,7 +54,7 @@ $("#Deposit").on("click",function(){
             relabel.push(i);
             $("h2").html("退職資産総額 "+Math.round(value)+"万円");
         }
-    const key = k+"年目";
+    const key = k+"回目";
     const am_result = result.map(Number)
     console.log(am_result)
     localStorage.setItem(key, result);
@@ -111,7 +111,7 @@ $("#TOPIX").on("click",function(){
             relabel.push(i);
             $("h2").html("退職資産総額 "+Math.round(value)+"万円");
         }
-    const key = k+"年目";
+    const key = k+"回目";
     const am_result = result.map(Number)
     console.log(am_result)
     localStorage.setItem(key, result);
@@ -171,7 +171,7 @@ $("#MSCI_EM").on("click",function(){
             relabel.push(i);
             $("h2").html("退職資産総額 "+Math.round(value)+"万円");
         }
-    const key = k+"年目";
+    const key = k+"回目";
     const am_result = result.map(Number)
     console.log(am_result)
     localStorage.setItem(key, result);
@@ -232,7 +232,7 @@ $("#MSCI_Developed").on("click",function(){
             relabel.push(i);
             $("h2").html("退職資産総額 "+Math.round(value)+"万円");
         }
-    const key = k+"年目";
+    const key = k+"回目";
     const am_result = result.map(Number)
     console.log(am_result)
     localStorage.setItem(key, result);
@@ -293,7 +293,7 @@ $("#USBOND").on("click",function(){
             relabel.push(i);
             $("h2").html("退職資産総額 "+Math.round(value)+"万円");
         }
-    const key = k+"年目";
+    const key = k+"回目";
     const am_result = result.map(Number)
     console.log(am_result)
     localStorage.setItem(key, result);
