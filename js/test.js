@@ -13,6 +13,7 @@ $("#MSCI_AWCI").on("click",function(){
         let saving = 12*$("#monthly_saving").val();
         let term = 65-$("#age").val();
         let result = []
+        let relabel = []
         for (let i = 1; i <= term; i++) {
             YENUSD = xRandomNormal(95.43,14.09); 
             rate = xRandomNormal(0.0597,0.1845);
@@ -20,6 +21,7 @@ $("#MSCI_AWCI").on("click",function(){
             asset = asset + profit + saving * YENUSD;
             const value = Math.round(asset/YENUSD);
             result.push(value);
+            relabel.push(i);
             $("h2").html("退職資産総額 "+Math.round(value)+"万円");
         }
     const key = k+"年目";
@@ -27,7 +29,8 @@ $("#MSCI_AWCI").on("click",function(){
     console.log(am_result)
     localStorage.setItem(key, result);
     sum += result[term-1]
-    myChart.data.datasets[0].data = am_result     
+    myChart.data.datasets[0].data = am_result
+    myChart.data.labels = relabel     
     }
     console.log(sum/100)
     myChart.update()
@@ -40,14 +43,15 @@ $("#Deposit").on("click",function(){
     let sum = 0;
     for (let k=1; k<=100; k++){
         let asset = 0;
-        let profit;
         let saving = 12*$("#monthly_saving").val();
         let term = 65-$("#age").val();
         let result = []
+        let relabel = []
         for (let i = 1; i <= term; i++) {
             asset = asset + saving ;
             const value = Math.round(asset);
             result.push(value);
+            relabel.push(i);
             $("h2").html("退職資産総額 "+Math.round(value)+"万円");
         }
     const key = k+"年目";
@@ -55,7 +59,8 @@ $("#Deposit").on("click",function(){
     console.log(am_result)
     localStorage.setItem(key, result);
     sum += result[term-1]
-    myChart.data.datasets[0].data = am_result     
+    myChart.data.datasets[0].data = am_result 
+    myChart.data.labels = relabel     
     }
     console.log(sum/100)
     myChart.update()
@@ -96,12 +101,14 @@ $("#TOPIX").on("click",function(){
         let saving = 12*$("#monthly_saving").val();
         let term = 65-$("#age").val();
         let result = []
+        let relabel = []
         for (let i = 1; i <= term; i++) { 
             rate = xRandomNormal(0.0404,0.2161);
             profit = asset * rate;
             asset = asset + profit + saving;
             const value = Math.round(asset);
             result.push(value);
+            relabel.push(i);
             $("h2").html("退職資産総額 "+Math.round(value)+"万円");
         }
     const key = k+"年目";
@@ -109,7 +116,8 @@ $("#TOPIX").on("click",function(){
     console.log(am_result)
     localStorage.setItem(key, result);
     sum += result[term-1]
-    myChart.data.datasets[0].data = am_result     
+    myChart.data.datasets[0].data = am_result
+    myChart.data.labels = relabel      
     }
     console.log(sum/100)
     myChart.update()
@@ -152,6 +160,7 @@ $("#MSCI_EM").on("click",function(){
         let saving = 12*$("#monthly_saving").val();
         let term = 65-$("#age").val();
         let result = []
+        let relabel = []
         for (let i = 1; i <= term; i++) {
             YENUSD = xRandomNormal(95.43,14.09); 
             rate = xRandomNormal(0.1365,0.2872);
@@ -159,6 +168,7 @@ $("#MSCI_EM").on("click",function(){
             asset = asset + profit + saving * YENUSD;
             const value = Math.round(asset/YENUSD);
             result.push(value);
+            relabel.push(i);
             $("h2").html("退職資産総額 "+Math.round(value)+"万円");
         }
     const key = k+"年目";
@@ -166,7 +176,8 @@ $("#MSCI_EM").on("click",function(){
     console.log(am_result)
     localStorage.setItem(key, result);
     sum += result[term-1]
-    myChart.data.datasets[0].data = am_result     
+    myChart.data.datasets[0].data = am_result
+    myChart.data.labels = relabel      
     }
     console.log(sum/100)
     myChart.update()
@@ -210,6 +221,7 @@ $("#MSCI_Developed").on("click",function(){
         let saving = 12*$("#monthly_saving").val();
         let term = 65-$("#age").val();
         let result = []
+        let relabel = []
         for (let i = 1; i <= term; i++) {
             YENUSD = xRandomNormal(95.43,14.09); 
             rate = xRandomNormal(0.0580,0.1792);
@@ -217,6 +229,7 @@ $("#MSCI_Developed").on("click",function(){
             asset = asset + profit + saving * YENUSD;
             const value = Math.round(asset/YENUSD);
             result.push(value);
+            relabel.push(i);
             $("h2").html("退職資産総額 "+Math.round(value)+"万円");
         }
     const key = k+"年目";
@@ -224,7 +237,8 @@ $("#MSCI_Developed").on("click",function(){
     console.log(am_result)
     localStorage.setItem(key, result);
     sum += result[term-1]
-    myChart.data.datasets[0].data = am_result     
+    myChart.data.datasets[0].data = am_result 
+    myChart.data.labels = relabel     
     }
     console.log(sum/100)
     myChart.update()
@@ -268,6 +282,7 @@ $("#USBOND").on("click",function(){
         let saving = 12*$("#monthly_saving").val();
         let term = 65-$("#age").val();
         let result = []
+        let relabel = []
         for (let i = 1; i <= term; i++) {
             YENUSD = xRandomNormal(95.43,14.09); 
             rate = xRandomNormal(0.0204,0.060);
@@ -275,6 +290,7 @@ $("#USBOND").on("click",function(){
             asset = asset + profit + saving * YENUSD;
             const value = Math.round(asset/YENUSD);
             result.push(value);
+            relabel.push(i);
             $("h2").html("退職資産総額 "+Math.round(value)+"万円");
         }
     const key = k+"年目";
@@ -282,7 +298,8 @@ $("#USBOND").on("click",function(){
     console.log(am_result)
     localStorage.setItem(key, result);
     sum += result[term-1]
-    myChart.data.datasets[0].data = am_result     
+    myChart.data.datasets[0].data = am_result
+    myChart.data.labels = relabel      
     }
     console.log(sum/100)
     myChart.update()
